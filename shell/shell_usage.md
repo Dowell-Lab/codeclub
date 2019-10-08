@@ -257,7 +257,7 @@ keybindings:
 
 
 <tr>
-<td class="org-left">C-x C-f</td>
+<td class="org-left">C-x C-e</td>
 <td class="org-left">Edit command in EDITOR</td>
 </tr>
 
