@@ -1,16 +1,16 @@
 
 # Table of Contents
 
-1.  [FIJI Tips and Tricks](#orgc4665c8)
-    1.  [Bash](#orgbcd7d8b)
-    2.  [Screen](#org0111ff3)
-    3.  [Useful Shell Keybindings](#org8d8a34a)
-    4.  [Less Common Commands](#org8d05b2f)
-        1.  [Parallel](#orgc5d5662)
-    5.  [Special Extras (advanced)](#org5db6353)
+1.  [FIJI Tips and Tricks](#org00b5afe)
+    1.  [Bash](#orge9504f4)
+    2.  [Useful Shell Keybindings](#orgc631161)
+    3.  [Screen](#orga307ae1)
+    4.  [Less Common Commands](#orgf595f2f)
+        1.  [Parallel](#org976af08)
+    5.  [Special Extras (advanced)](#org5ddb4ac)
 
 
-<a id="orgc4665c8"></a>
+<a id="org00b5afe"></a>
 
 # FIJI Tips and Tricks
 
@@ -19,7 +19,7 @@ user friendly. Today we're going to go over a bunch of useful
 things. We'll start off with some useful configurations.
 
 
-<a id="orgbcd7d8b"></a>
+<a id="orge9504f4"></a>
 
 ## Bash
 
@@ -36,7 +36,7 @@ times. Some things you can customize:
 I've provided a sample containing some things out of my `~/.bashrc`
 file below. We'll walk through what each line does.
 
-    # All of this should go in ~/.bashrc 
+    # All of this should go in ~/.bashrc
     
     # First, we'll change the default prompt that we use for bash. I've
     # provided the one that I use on FIJI below, but you can customize
@@ -74,7 +74,101 @@ file below. We'll walk through what each line does.
     alias squ='squeue -u $(whoami)' # Your own sbatch jobs
 
 
-<a id="org0111ff3"></a>
+<a id="orgc631161"></a>
+
+## Useful Shell Keybindings
+
+When working in the shell, there are several keybindings and
+shortcuts that you can use to speed up your work. Bash uses a
+library called readline, which defaults to emacs keybindings. If
+you keep it in **emacs mode**, you can use some of the following
+keybindings:
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Keybinding</th>
+<th scope="col" class="org-left">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">C-a</td>
+<td class="org-left">Start of line</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-e</td>
+<td class="org-left">End of line</td>
+</tr>
+
+
+<tr>
+<td class="org-left">A-f</td>
+<td class="org-left">Next Word</td>
+</tr>
+
+
+<tr>
+<td class="org-left">A-b</td>
+<td class="org-left">Previous Word</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-r</td>
+<td class="org-left">Reverse Command Search</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-x C-e</td>
+<td class="org-left">Edit command in EDITOR</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-l</td>
+<td class="org-left">Clear the screen</td>
+</tr>
+</tbody>
+</table>
+
+For more keybindings, check out [the bindings for emacs](https://readline.kablamo.org/emacs.html)
+
+If you choose to use **vi mode**, you can use most common vim commands
+at the command line. To exit insert mode, use `ESC`. Then, you can
+edit using vim commands as you see fit. In this mode, use the key
+`v` to edit your command in EDITOR.
+
+One of the most useful things you can do here is edit a the
+command in your terminal using your editor. This gives you all the
+features of a text editor and lets you do things like write
+multi-line commands without having to go straight to a script. To
+do this, just use `C-x C-e` (emacs mode) or `ESC v` (vi mode).
+Your current command will be opened in your editor. When you're
+finished with your command, just save and quit and the command
+will be executed in your terminal.
+
+The other essential keybinding to know is `C-r`, which lets you
+look up previous commands from your history. Say you used a long
+command earlier and did a bunch of other work after that. If you
+wanted to use the command again, you could use the arrow keys to
+look through your history until you find it, but that could take a
+while. If you use `C-r` instead, you can just search for it in
+your history instead.
+
+
+<a id="orga307ae1"></a>
 
 ## Screen
 
@@ -190,7 +284,73 @@ I've made a small table of the most useful ones below.
 
 These are the commands I think are most useful for working with
 screen. If you want to know more of them, check out [the keybinding
-documentation](https://www.gnu.org/software/screen/manual/screen.html#Default-Key-Bindings). 
+documentation](https://www.gnu.org/software/screen/manual/screen.html#Default-Key-Bindings).
+
+Another useful feature is the ability to split screen sessions
+vertically and horizontally. Below is a brief table of the
+keybindings used for splitting vertically and horizontally:
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Keybinding</th>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">C-a &vert;</td>
+<td class="org-left">vertical split</td>
+<td class="org-left">Split current window vertically</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-a S</td>
+<td class="org-left">horizontal split</td>
+<td class="org-left">Split current window horizontally</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-a TAB</td>
+<td class="org-left">switch split</td>
+<td class="org-left">Change to the next split window</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-a "</td>
+<td class="org-left">list windows</td>
+<td class="org-left">List all available windows you have open</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-a X</td>
+<td class="org-left">close window</td>
+<td class="org-left">Close the current window</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-a Q</td>
+<td class="org-left">destroy splits</td>
+<td class="org-left">Reset any splitting you've done to 1 window</td>
+</tr>
+</tbody>
+</table>
 
 The other important thing to know about screen is that it handles
 your terminals using "sessions", which you can have one or more
@@ -200,113 +360,20 @@ attach to an existing session or make a new one, use `screen -DR
 If not, a new session with that name will be created.
 
 
-<a id="org8d8a34a"></a>
-
-## Useful Shell Keybindings
-
-When working in the shell, there are several keybindings and
-shortcuts that you can use to speed up your work. Bash uses a
-library called readline, which defaults to emacs keybindings. If
-you keep it in this mode, you can use some of the following
-keybindings:
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Keybinding</th>
-<th scope="col" class="org-left">Function</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td class="org-left">C-a</td>
-<td class="org-left">Start of line</td>
-</tr>
-
-
-<tr>
-<td class="org-left">C-e</td>
-<td class="org-left">End of line</td>
-</tr>
-
-
-<tr>
-<td class="org-left">A-f</td>
-<td class="org-left">Next Word</td>
-</tr>
-
-
-<tr>
-<td class="org-left">A-b</td>
-<td class="org-left">Previous Word</td>
-</tr>
-
-
-<tr>
-<td class="org-left">C-r</td>
-<td class="org-left">Reverse Command Search</td>
-</tr>
-
-
-<tr>
-<td class="org-left">C-x C-e</td>
-<td class="org-left">Edit command in EDITOR</td>
-</tr>
-
-
-<tr>
-<td class="org-left">C-l</td>
-<td class="org-left">Clear the screen</td>
-</tr>
-</tbody>
-</table>
-
-For more keybindings, check out [the bindings for emacs](https://readline.kablamo.org/emacs.html)
-
-If you choose to use vi mode, you can use most common vim commands
-at the command line. To exit insert mode, use `ESC`. Then, you can
-edit using vim commands as you see fit. In this mode, use the key
-`v` to edit your command in EDITOR.
-
-One of the most useful things you can do here is edit a the
-command in your terminal using your editor. This gives you all the
-features of a text editor and lets you do things like write
-multi-line commands without having to go straight to a script. To
-do this, just use `C-x C-f` (emacs mode) or `ESC v` (vi mode).
-Your current command will be opened in your editor. When you're
-finished with your command, just save and quit and the command
-will be executed in your terminal.
-
-The other essential keybinding to know is `C-r`, which lets you
-look up previous commands from your history. Say you used a long
-command earlier and did a bunch of other work after that. If you
-wanted to use the command again, you could use the arrow keys to
-look through your history until you find it, but that could take a
-while. If you use `C-r` instead, you can just search for it in
-your history instead.
-
-
-<a id="org8d05b2f"></a>
+<a id="orgf595f2f"></a>
 
 ## Less Common Commands
 
 
-<a id="orgc5d5662"></a>
+<a id="org976af08"></a>
 
 ### Parallel
 
 GNU Parallel is a command for running tasks in parallel that
 comes installed by default on FIJI. The advantage of using
 something like parallel is that it only creates as many jobs as
-there are processors available. For example:
+there are processors available (respecting your slurm settings).
+For example:
 
     # Unzip every .gz file in a directory in parallel. {} is where the
     # name of each file is substituted.
@@ -319,7 +386,7 @@ found [here](https://github.com/LangilleLab/microbiome_helper/wiki/Quick-Introdu
 found [here](https://www.gnu.org/software/parallel/parallel_tutorial.html).
 
 
-<a id="org5db6353"></a>
+<a id="org5ddb4ac"></a>
 
 ## Special Extras (advanced)
 
