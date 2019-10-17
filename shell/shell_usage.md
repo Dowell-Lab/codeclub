@@ -377,7 +377,7 @@ For example:
 
     # Unzip every .gz file in a directory in parallel. {} is where the
     # name of each file is substituted.
-    parallel gunzip {} :: *.gz
+    parallel gunzip {} ::: *.gz
 
 Parallel has too many features for me to cover in detail here. I
 highly recommend it for any time you need to run multiple
