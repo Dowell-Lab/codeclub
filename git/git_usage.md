@@ -1,35 +1,35 @@
 
 # Table of Contents
 
-1.  [An Overview of Git](#org2d7f3aa)
-    1.  [Understanding Git](#orge62b742)
-        1.  [Version Control Systems From Scratch](#org07fe7f0)
-        2.  [A Brief Overview of Git's Internals](#orgcb34f41)
-        3.  [Why Design It This Way?](#org36dcdca)
-    2.  [Git Basics](#orge925537)
-        1.  [Terminology](#org4df5162)
-        2.  [A Basic Git Workflow](#orgc641c00)
-        3.  [Adding a Remote Repository](#org9d9d101)
-        4.  [Branches and Forks](#org101794f)
-    3.  [Intermediate Topics](#orga48fa7b)
-        1.  [Merging and Rebasing](#orgad51913)
-        2.  [Gitignore](#org069b2ee)
-        3.  [Licensing](#org9259b98)
-        4.  [Large Files](#org3f7727a)
-        5.  [Tags](#org6b1631a)
-        6.  [Stashing](#org475659b)
-        7.  [Git Config File](#org0afb240)
-    4.  [Advanced Topics](#org592caee)
-        1.  [Repositories inside Repositories](#org9fca4d9)
-        2.  [Bisect](#org1e8fbb4)
-        3.  [Cherry-pick](#orgc46a318)
-        4.  [Filter-branch](#orgecd6141)
-        5.  [Email Patches](#org32bc756)
-        6.  [Rerere](#orgff3d38b)
-    5.  [Making a Pull Request](#orgbca509f)
+1.  [An Overview of Git](#orgd88d285)
+    1.  [Understanding Git](#orgc24c96d)
+        1.  [Version Control Systems From Scratch](#org5fbc93e)
+        2.  [A Brief Overview of Git's Internals](#orga5d77b9)
+        3.  [Why Design It This Way?](#org5d97e76)
+    2.  [Git Basics](#org14822bd)
+        1.  [Terminology](#org8fce1d9)
+        2.  [A Basic Git Workflow](#orgc0e4bc6)
+        3.  [Adding a Remote Repository](#org1e152ae)
+        4.  [Branches and Forks](#orgdd140ce)
+    3.  [Intermediate Topics](#org2c0b5f2)
+        1.  [Merging and Rebasing](#orgce93454)
+        2.  [Gitignore](#org11076e9)
+        3.  [Licensing](#orgcd7f725)
+        4.  [Large Files](#orgba4b936)
+        5.  [Tags](#org8016543)
+        6.  [Stashing](#org122f6c2)
+        7.  [Git Config File](#orged9a879)
+    4.  [Advanced Topics](#org3896789)
+        1.  [Repositories inside Repositories](#org99d56c4)
+        2.  [Bisect](#orgf93b391)
+        3.  [Cherry-pick](#orgba74338)
+        4.  [Filter-branch](#org1a235b2)
+        5.  [Email Patches](#org6b6e357)
+        6.  [Rerere](#orgae59c15)
+    5.  [Making a Pull Request](#org151c550)
 
 
-<a id="org2d7f3aa"></a>
+<a id="orgd88d285"></a>
 
 # An Overview of Git
 
@@ -61,7 +61,7 @@ experienced you are with git:
     Documentation](https://git-scm.com/book/en/v1/Git-Internals), or
 
 
-<a id="orge62b742"></a>
+<a id="orgc24c96d"></a>
 
 ## Understanding Git
 
@@ -71,7 +71,7 @@ in the world. Although git is powerful, it can be tricky to
 understand at first.
 
 
-<a id="org07fe7f0"></a>
+<a id="org5fbc93e"></a>
 
 ### Version Control Systems From Scratch
 
@@ -90,9 +90,9 @@ after you've put the revisions from your collaborator back in.
 
 If you do this, you'll end up with a bunch of files:
 
--   paper.doc
--   paper<sub>revisions.doc</sub>
--   paper<sub>final.doc</sub>
+-   `paper.doc`
+-   `paper_revisions.doc`
+-   `paper_final.doc`
 
 If you repeated this process, you'd end up with a lot of files
 eventually, and it would be hard to keep track of them. How do we
@@ -115,7 +115,7 @@ control system like git is doing. Git provides a way to do this
 with lots of files at once, and with lots of people.
 
 
-<a id="orgcb34f41"></a>
+<a id="orga5d77b9"></a>
 
 ### A Brief Overview of Git's Internals
 
@@ -153,7 +153,7 @@ look at the structure above like a chain of changes: `8db90c ->
 at the front, or head, of the chain of changes.
 
 
-<a id="org36dcdca"></a>
+<a id="org5d97e76"></a>
 
 ### Why Design It This Way?
 
@@ -170,12 +170,12 @@ tutorial, we'll go over the most common workflow that people
 on GitHub use.
 
 
-<a id="orge925537"></a>
+<a id="org14822bd"></a>
 
 ## Git Basics
 
 
-<a id="org4df5162"></a>
+<a id="org8fce1d9"></a>
 
 ### Terminology
 
@@ -309,7 +309,7 @@ the repository, which is called "master".
 </table>
 
 
-<a id="orgc641c00"></a>
+<a id="orgc0e4bc6"></a>
 
 ### A Basic Git Workflow
 
@@ -373,7 +373,7 @@ making a few changes to the repository, commit them, and then
 look at the resulting `git log`.
 
 
-<a id="org9d9d101"></a>
+<a id="org1e152ae"></a>
 
 ### Adding a Remote Repository
 
@@ -405,7 +405,7 @@ opposite of a push).
     git pull origin master
 
 
-<a id="org101794f"></a>
+<a id="orgdd140ce"></a>
 
 ### Branches and Forks
 
@@ -478,12 +478,12 @@ use (although the history of the term is more complicated).
     section.
 
 
-<a id="orga48fa7b"></a>
+<a id="org2c0b5f2"></a>
 
 ## Intermediate Topics
 
 
-<a id="orgad51913"></a>
+<a id="orgce93454"></a>
 
 ### Merging and Rebasing
 
@@ -552,7 +552,7 @@ rebase is probably a better idea.
         git rebase -i HEAD~5
 
 
-<a id="org069b2ee"></a>
+<a id="org11076e9"></a>
 
 ### Gitignore
 
@@ -573,7 +573,7 @@ Much more detailed documentation on how to build gitignore files
 can be found at the [official git documentation](https://git-scm.com/docs/gitignore).
 
 
-<a id="org9259b98"></a>
+<a id="orgcd7f725"></a>
 
 ### Licensing
 
@@ -651,7 +651,7 @@ I prefer and the reasons why.
             use this license.
 
 
-<a id="org3f7727a"></a>
+<a id="orgba4b936"></a>
 
 ### Large Files
 
@@ -677,7 +677,7 @@ that you fully understand what the command is doing before you
 run a command like this.
 
 
-<a id="org6b1631a"></a>
+<a id="org8016543"></a>
 
 ### Tags
 
@@ -693,7 +693,7 @@ labels to certain commits. You can do this easily:
     git push origin 1.0.0 # You have to manually push tags by name
 
 
-<a id="org475659b"></a>
+<a id="org122f6c2"></a>
 
 ### Stashing
 
@@ -704,7 +704,7 @@ can use the `git stash apply` command to apply them back onto
 your repository in its current state.
 
 
-<a id="org0afb240"></a>
+<a id="orged9a879"></a>
 
 ### Git Config File
 
@@ -749,7 +749,7 @@ example of what I keep in my `~/.gitconfig` file.
     		autocorrect = 1
 
 
-<a id="org592caee"></a>
+<a id="org3896789"></a>
 
 ## Advanced Topics
 
@@ -757,7 +757,7 @@ These topics are roughly ordered by how frequently you might use
 them in the real world.
 
 
-<a id="org9fca4d9"></a>
+<a id="org99d56c4"></a>
 
 ### Repositories inside Repositories
 
@@ -777,7 +777,7 @@ them in the real world.
     process.
 
 
-<a id="org1e8fbb4"></a>
+<a id="orgf93b391"></a>
 
 ### Bisect
 
@@ -787,7 +787,7 @@ search through old versions of your code to find where a bug was
 introduced.
 
 
-<a id="orgc46a318"></a>
+<a id="orgba74338"></a>
 
 ### Cherry-pick
 
@@ -797,7 +797,7 @@ else made a single change that you want to get without having to
 deal with the complexities of merging.
 
 
-<a id="orgecd6141"></a>
+<a id="org1a235b2"></a>
 
 ### Filter-branch
 
@@ -808,7 +808,7 @@ mistakenly committed, or a secret that definitely shouldn't be
 there.
 
 
-<a id="org32bc756"></a>
+<a id="org6b6e357"></a>
 
 ### Email Patches
 
@@ -819,7 +819,7 @@ in the standard `mbox` format. This also works well with `git
 		 send-email` to automatically send in your patches.
 
 
-<a id="orgff3d38b"></a>
+<a id="orgae59c15"></a>
 
 ### Rerere
 
@@ -830,7 +830,7 @@ you're doing a lot of merging, like if you're a maintainer for a
 big project.
 
 
-<a id="orgbca509f"></a>
+<a id="org151c550"></a>
 
 ## Making a Pull Request
 
