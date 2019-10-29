@@ -1,35 +1,35 @@
 
 # Table of Contents
 
-1.  [An Overview of Git](#orgd88d285)
-    1.  [Understanding Git](#orgc24c96d)
-        1.  [Version Control Systems From Scratch](#org5fbc93e)
-        2.  [A Brief Overview of Git's Internals](#orga5d77b9)
-        3.  [Why Design It This Way?](#org5d97e76)
-    2.  [Git Basics](#org14822bd)
-        1.  [Terminology](#org8fce1d9)
-        2.  [A Basic Git Workflow](#orgc0e4bc6)
-        3.  [Adding a Remote Repository](#org1e152ae)
-        4.  [Branches and Forks](#orgdd140ce)
-    3.  [Intermediate Topics](#org2c0b5f2)
-        1.  [Merging and Rebasing](#orgce93454)
-        2.  [Gitignore](#org11076e9)
-        3.  [Licensing](#orgcd7f725)
-        4.  [Large Files](#orgba4b936)
-        5.  [Tags](#org8016543)
-        6.  [Stashing](#org122f6c2)
-        7.  [Git Config File](#orged9a879)
-    4.  [Advanced Topics](#org3896789)
-        1.  [Repositories inside Repositories](#org99d56c4)
-        2.  [Bisect](#orgf93b391)
-        3.  [Cherry-pick](#orgba74338)
-        4.  [Filter-branch](#org1a235b2)
-        5.  [Email Patches](#org6b6e357)
-        6.  [Rerere](#orgae59c15)
-    5.  [Making a Pull Request](#org151c550)
+1.  [An Overview of Git](#orgff44acd)
+    1.  [Understanding Git](#org3c25750)
+        1.  [Version Control Systems From Scratch](#org32dd315)
+        2.  [A Brief Overview of Git's Internals](#orgc2c2f97)
+        3.  [Why Design It This Way?](#org8380e7b)
+    2.  [Git Basics](#org559b1dc)
+        1.  [Terminology](#org5fa2dde)
+        2.  [A Basic Git Workflow](#org347da21)
+        3.  [Adding a Remote Repository](#org0274645)
+        4.  [Branches and Forks](#orge471ba1)
+    3.  [Intermediate Topics](#orgb6f19e2)
+        1.  [Merging and Rebasing](#org1b2efa3)
+        2.  [Gitignore](#org1d764be)
+        3.  [Licensing](#org79fe248)
+        4.  [Large Files](#org8f4ac52)
+        5.  [Tags](#org8cc17f1)
+        6.  [Stashing](#org59da0ca)
+        7.  [Git Config File](#orgc0f6355)
+    4.  [Advanced Topics](#org4dcb64c)
+        1.  [Repositories inside Repositories](#orgf2749b0)
+        2.  [Bisect](#org8a226eb)
+        3.  [Cherry-pick](#org007c055)
+        4.  [Filter-branch](#org90128c7)
+        5.  [Email Patches](#orgf584f7a)
+        6.  [Rerere](#orgc3d28a8)
+    5.  [Making a Pull Request](#org6b922d8)
 
 
-<a id="orgd88d285"></a>
+<a id="orgff44acd"></a>
 
 # An Overview of Git
 
@@ -61,7 +61,7 @@ experienced you are with git:
     Documentation](https://git-scm.com/book/en/v1/Git-Internals), or
 
 
-<a id="orgc24c96d"></a>
+<a id="org3c25750"></a>
 
 ## Understanding Git
 
@@ -71,7 +71,7 @@ in the world. Although git is powerful, it can be tricky to
 understand at first.
 
 
-<a id="org5fbc93e"></a>
+<a id="org32dd315"></a>
 
 ### Version Control Systems From Scratch
 
@@ -81,11 +81,11 @@ first place.
 
 Suppose you were working on a document in something like
 Microsoft Word, and you wanted to create a copy of it to send to
-your collaborators. Say your document is called "paper.doc".
+your collaborators. Say your document is called `paper.doc`.
 After you send it to collaborators, you'll probably get back a
 copy of the file with a different name, like
-"paper<sub>revisions.doc</sub>". Once you make your changes, you might make
-a new copy called "paper<sub>final.doc</sub>" that contains all the changes
+`paper_revisions.doc`. Once you make your changes, you might make
+a new copy called `paper_final.doc` that contains all the changes
 after you've put the revisions from your collaborator back in.
 
 If you do this, you'll end up with a bunch of files:
@@ -101,13 +101,13 @@ revision, and copy over the version of the file after your latest
 changes. 
 
 -   08/05/2019 <- before revisions
-    -   paper.doc
+    -   `paper.doc`
 -   08/07/2019 <- after revisions
-    -   paper.doc
+    -   `paper.doc`
 -   08/09/2019 <- after more revisions
-    -   paper.doc
+    -   `paper.doc`
 -   Current <- your current version
-    -   paper.doc
+    -   `paper.doc`
 
 If we do things this way, we can go back and look at the document
 at any point in time. Under the hood, this is what a version
@@ -115,7 +115,7 @@ control system like git is doing. Git provides a way to do this
 with lots of files at once, and with lots of people.
 
 
-<a id="orga5d77b9"></a>
+<a id="orgc2c2f97"></a>
 
 ### A Brief Overview of Git's Internals
 
@@ -153,7 +153,7 @@ look at the structure above like a chain of changes: `8db90c ->
 at the front, or head, of the chain of changes.
 
 
-<a id="org5d97e76"></a>
+<a id="org8380e7b"></a>
 
 ### Why Design It This Way?
 
@@ -170,12 +170,12 @@ tutorial, we'll go over the most common workflow that people
 on GitHub use.
 
 
-<a id="org14822bd"></a>
+<a id="org559b1dc"></a>
 
 ## Git Basics
 
 
-<a id="org8fce1d9"></a>
+<a id="org5fa2dde"></a>
 
 ### Terminology
 
@@ -309,7 +309,7 @@ the repository, which is called "master".
 </table>
 
 
-<a id="orgc0e4bc6"></a>
+<a id="org347da21"></a>
 
 ### A Basic Git Workflow
 
@@ -373,7 +373,7 @@ making a few changes to the repository, commit them, and then
 look at the resulting `git log`.
 
 
-<a id="org1e152ae"></a>
+<a id="org0274645"></a>
 
 ### Adding a Remote Repository
 
@@ -405,7 +405,7 @@ opposite of a push).
     git pull origin master
 
 
-<a id="orgdd140ce"></a>
+<a id="orge471ba1"></a>
 
 ### Branches and Forks
 
@@ -478,12 +478,12 @@ use (although the history of the term is more complicated).
     section.
 
 
-<a id="org2c0b5f2"></a>
+<a id="orgb6f19e2"></a>
 
 ## Intermediate Topics
 
 
-<a id="orgce93454"></a>
+<a id="org1b2efa3"></a>
 
 ### Merging and Rebasing
 
@@ -552,7 +552,7 @@ rebase is probably a better idea.
         git rebase -i HEAD~5
 
 
-<a id="org11076e9"></a>
+<a id="org1d764be"></a>
 
 ### Gitignore
 
@@ -573,7 +573,7 @@ Much more detailed documentation on how to build gitignore files
 can be found at the [official git documentation](https://git-scm.com/docs/gitignore).
 
 
-<a id="orgcd7f725"></a>
+<a id="org79fe248"></a>
 
 ### Licensing
 
@@ -651,7 +651,7 @@ I prefer and the reasons why.
             use this license.
 
 
-<a id="orgba4b936"></a>
+<a id="org8f4ac52"></a>
 
 ### Large Files
 
@@ -677,7 +677,7 @@ that you fully understand what the command is doing before you
 run a command like this.
 
 
-<a id="org8016543"></a>
+<a id="org8cc17f1"></a>
 
 ### Tags
 
@@ -693,7 +693,7 @@ labels to certain commits. You can do this easily:
     git push origin 1.0.0 # You have to manually push tags by name
 
 
-<a id="org122f6c2"></a>
+<a id="org59da0ca"></a>
 
 ### Stashing
 
@@ -704,7 +704,7 @@ can use the `git stash apply` command to apply them back onto
 your repository in its current state.
 
 
-<a id="orged9a879"></a>
+<a id="orgc0f6355"></a>
 
 ### Git Config File
 
@@ -749,7 +749,7 @@ example of what I keep in my `~/.gitconfig` file.
     		autocorrect = 1
 
 
-<a id="org3896789"></a>
+<a id="org4dcb64c"></a>
 
 ## Advanced Topics
 
@@ -757,7 +757,7 @@ These topics are roughly ordered by how frequently you might use
 them in the real world.
 
 
-<a id="org99d56c4"></a>
+<a id="orgf2749b0"></a>
 
 ### Repositories inside Repositories
 
@@ -777,7 +777,7 @@ them in the real world.
     process.
 
 
-<a id="orgf93b391"></a>
+<a id="org8a226eb"></a>
 
 ### Bisect
 
@@ -787,7 +787,7 @@ search through old versions of your code to find where a bug was
 introduced.
 
 
-<a id="orgba74338"></a>
+<a id="org007c055"></a>
 
 ### Cherry-pick
 
@@ -797,7 +797,7 @@ else made a single change that you want to get without having to
 deal with the complexities of merging.
 
 
-<a id="org1a235b2"></a>
+<a id="org90128c7"></a>
 
 ### Filter-branch
 
@@ -808,7 +808,7 @@ mistakenly committed, or a secret that definitely shouldn't be
 there.
 
 
-<a id="org6b6e357"></a>
+<a id="orgf584f7a"></a>
 
 ### Email Patches
 
@@ -819,7 +819,7 @@ in the standard `mbox` format. This also works well with `git
 		 send-email` to automatically send in your patches.
 
 
-<a id="orgae59c15"></a>
+<a id="orgc3d28a8"></a>
 
 ### Rerere
 
@@ -830,7 +830,7 @@ you're doing a lot of merging, like if you're a maintainer for a
 big project.
 
 
-<a id="org151c550"></a>
+<a id="org6b922d8"></a>
 
 ## Making a Pull Request
 
