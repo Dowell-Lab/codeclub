@@ -16,6 +16,17 @@
     clarify things.
   - Everyone has an account through CU
   - Turn off video when at all possible to save bandwidth
+- Overleaf
+  - Now is an awesome time to work on that manuscript you've been
+    procrastinating on. If you want to use LaTeX, we have a lab
+    overleaf account that Robin can create large projects on.
+  - Overleaf is basically Microsoft Word for LaTeX, and has all the
+    tools you might expect. We had a great experience using it for
+    TFEA.
+- Google Drive / Docs
+  - This is always an option for spreadsheets and presentations
+  - If you're feeling brave, please let me know and you can help
+    contribute to the nascent repository!
 
 ## Tips for home offices
 
@@ -44,10 +55,20 @@
 - If you're using video, you can set a custom background in the
   settings. I like to use NASA space pictures.
 
-## Shell tips for Working with FIJI
+## Technical tips for Working with FIJI
 
 Given that the VPN is likely overloaded, there are a few things you
 can do:
+
+- Since residential connections are often much faster on download than
+  upload, try to keep things on FIJI and do processing there before
+  pulling them down to look at. If you try to upload a large file it
+  will take a while to complete.
+
+- You can do a ton of analysis with a counts table for DESeq2 even on
+  your local machine. You can do differential expression analysis,
+  gsea, and all sorts of other statistical plots that could be
+  informative. Plus, the files are tiny and easy to move around.
 
 - In your vimrc (`~/.vimrc`), set the following. This tells vim to
   only update the screen when absolutely needed, which can help speed
@@ -76,6 +97,24 @@ Host fiji*
   painfully slow experiences pulling files from FIJI to look at on my
   local computer, unless they're very small.
 
+- If you're on Linux, you can set up
+  [ocproxy](https://github.com/cernekee/ocproxy), which routes CU's
+  VPN (using openconnect) through a proxy. This lets you use the VPN
+  only for things that you want to use it for, and keeps the rest of
+  your traffic going through your home network at its normal speed.
+  Add the magical invocation below to your ssh configuration to route
+  ssh connections to FIJI through the VPN proxy only when you're not
+  on campus.
+
+```
+Match Host fiji* !exec "ping -c 1 -W 0.5 fiji.colorado.edu &> /dev/null"
+    ProxyCommand nc -X 5 -x 127.0.0.1:9052 %h %p
+    Compression yes
+```
+
+  Unfortunately I don't know how you would do this on a windows
+  system. It might work on Macs, but I don't have experience with how
+  to make that work.
 
 ## Miscellaneous advice
 
@@ -87,4 +126,4 @@ Host fiji*
 - Now that we're all primarily working on analysis projects, you're
   probably spending a lot of time looking at scripts. Lots of people
   I've talked to like Visual Studio Code, which is freely available
-  and easy to install on all platforms.
+  and easy to install on all platforms. Find details [here](https://code.visualstudio.com/)
