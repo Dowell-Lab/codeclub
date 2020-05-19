@@ -138,7 +138,7 @@ will take you to a page with a detailed description of the gene set
 and the genes contained within.
 
 ![GSEA results table with arrows pointing to
-p-value](./images/gsea_snapshot.png)
+p-value](./images/gsea_table.png)
 
 With this data, you can also make plots (usually a volcano plot of
 p-value compared to enrichment score) using the `.xls` file contained
