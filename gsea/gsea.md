@@ -111,16 +111,12 @@ bottom labeled 'run' to run your analysis.
 arrow](./images/gsea_preranked_run.png)
 
 In the bottom left of the window you can see the status of your
-analyses, with the most recent one on the bottom.
-
-![GSEA run status box](./images/gsea_run_status.png)
-
-When your data has finished running, you can go to the directory
-indicated in your settings to see the output. The easiest way is to
-copy the file path for `index.html` and paste it into your browser. If
-you want to follow along, the sample output from this experiment is
-available in the `example_output` in the same directory as this
-document.
+analyses, with the most recent one on the bottom. When your data has
+finished running, you can go to the directory indicated in your
+settings to see the output. The easiest way is to copy the file path
+for `index.html` and paste it into your browser. If you want to follow
+along, the sample output from this experiment is available in the
+`example_output` in the same directory as this document.
 
 ![GSEA results homepage](./images/gsea_run_status.png)
 
