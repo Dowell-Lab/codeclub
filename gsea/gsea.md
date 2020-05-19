@@ -84,14 +84,14 @@ preranked](./images/gsea_goto_preranked.png)
 On this screen, click the `...` button on the side of 'Gene sets database'.
 
 ![GSEA preranked with arrows pointing to gene sets
-database](./images/images/gsea_preranked_db_button.png)
+database](./images/gsea_preranked_db_button.png)
 
 For this analysis, we're going to use the hallmarks database, which is
 the first item in the list. This database contains the most
 well-defined sets of biological interest.
 
 ![GSEA database selector with hallmarks
-arrow](./images/images/gsea_hallmarks.png)
+arrow](./images/gsea_hallmarks.png)
 
 Since our data set already has common gene symbols, we don't need the
 `ChIP Platform` field to contain anything. However, we do need to
@@ -102,19 +102,46 @@ change the name of your analysis. This also tells you where the final
 output will be saved.
 
 ![GSEA database selector with hallmarks
-arrow](./images/images/gsea_preranked_settings.png)
+arrow](./images/gsea_preranked_settings.png)
 
 When you're satisfied with your settings, click the button at the
 bottom labeled 'run' to run your analysis.
 
 ![GSEA database selector with run
-arrow](./images/images/gsea_preranked_run.png)
+arrow](./images/gsea_preranked_run.png)
 
 In the bottom left of the window you can see the status of your
 analyses, with the most recent one on the bottom.
 
-![GSEA run status box](./images/images/gsea_run_status.png)
+![GSEA run status box](./images/gsea_run_status.png)
 
 When your data has finished running, you can go to the directory
 indicated in your settings to see the output. The easiest way is to
-copy the file path for `index.html` and paste it into your browser.
+copy the file path for `index.html` and paste it into your browser. If
+you want to follow along, the sample output from this experiment is
+available in the `example_output` in the same directory as this
+document.
+
+![GSEA results homepage](./images/gsea_run_status.png)
+
+The most important part of this page is the `enrichment results in
+html` section, which shows you which gene sets are upregulated (pos)
+and downregulated (neg), in a convenient table.
+
+![GSEA results homepage with arrows pointing to
+HTML snapshots](./images/gsea_snapshot.png)
+
+In this table you can look at all of the gene sets that were found to
+be regulated in that condition, as well as a nominal `p-value` that
+you can use to assign significance. Clicking on the name of a pathway
+will take you to a page with a detailed description of the gene set
+and the genes contained within.
+
+![GSEA results table with arrows pointing to
+p-value](./images/gsea_snapshot.png)
+
+With this data, you can also make plots (usually a volcano plot of
+p-value compared to enrichment score) using the `.xls` file contained
+in your output. If you prefer looking at things in Microsoft Excel,
+you can also open this file there and look at the results directly in
+that format.
