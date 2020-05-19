@@ -1,0 +1,23 @@
+producer_class	xtools.gsea.GseaPreranked
+producer_timestamp	1589911025292
+param	rpt_label	test_analysis
+param	rnd_seed	timestamp
+param	set_min	15
+param	zip_report	false
+param	create_svgs	false
+param	scoring_scheme	weighted
+param	rnk	/home/zach/dowell_lab/codeclub/gsea/deseq_res_for_gsea.rnk
+param	norm	meandiv
+param	out	/home/zach/gsea_home/output/may19
+param	mode	Max_probe
+param	include_only_symbols	true
+param	help	false
+param	set_max	500
+param	gmx	ftp.broadinstitute.org://pub/gsea/gene_sets/h.all.v7.1.symbols.gmt
+param	make_sets	true
+param	plot_top_x	20
+param	gui	false
+param	nperm	1000
+param	collapse	No_Collapse
+
+file	/home/zach/gsea_home/output/may19/test_analysis.GseaPreranked.1589911025292/index.html
