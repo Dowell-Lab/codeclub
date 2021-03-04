@@ -1,0 +1,6 @@
+Context: Two coins are flipped and (in chunks of 10 flips) the number of heads are summed.
+Question: Is it likely that one or both of the coins is loaded? If so, which ones?
+Coin 1:
+4,2,4,5,3,7,4,5,6,3,4,3,6,4,2,7,7,6,5,5
+Coin 2:
+6,4,4,9,3,6,7,5,6,8,5,3,9,6,6,8,5,7,2,7
