@@ -50,15 +50,21 @@ c. Before configuring, boost first test the help command and list of libraries
 
 This will show libraries that will need to be built separately
 
+![imgA](images/image4.png)
+
 d. Install Boost in home directory, use the --prefix option for bootstrap.sh, and disable libraries using the --without-libraries option.
 
 `./bootstrap.sh --prefix=/Users/rusi2317/bin/boost_1_86_0 --without-libraries=`
+
+![imgB](images/image1.png)
 
 e. Make and install the program. 
 
 `./b2 install | tee install.log`
 
 When done, there should be an`include` folder and a `lib` folder.
+
+![imgC](images/image10.png)
 
 - Once dREG plus all the dependencies are installed, we can now configure the Rgtsvm package on the GPU 
 
@@ -96,11 +102,15 @@ b. Move into the dREG folder that has been just cloned, and run the following co
 
 > NOTE: I got the following warning “make: warning:  Clock skew detected.  Your build may be incomplete.” However, I was able to load the library in R.
 
+![imgD](images/image13.png)
+
 c. Now, install dREG by running
 
 `make dreg`
  
 > NOTE: The following package rphast did not install, so manually installing it.
+
+![imgE](images/image8.png)
 
 d. Installing rphast using devtools following instructions from their GitHub page. https://github.com/CshlSiepelLab/RPHAST
 
@@ -110,7 +120,9 @@ e. Try and install dREG again. It worked for me this time!
 
 `make dreg`
 
-f. Download the dREG model Rdata file. Downloaded this in the dREG folder. 
+![imgF](images/image3.png)
+
+f. Download the dREG model Rdata file. I downloaded this in the dREG folder that is cloned. 
 
 `wget https://dreg.dnasequence.org/themes/dreg/assets/file/asvm.gdm.6.6M.20170828.rdata`
 
@@ -145,14 +157,17 @@ cd Rgtsvm
 make R_dependencies
 ```
 
+![imgF](images/image11.png)
+
 f. Configure CUDA and Boost. 
 
 `R CMD INSTALL --configure-args="--with-cuda-arch=sm_80 --with-cuda-home=/usr/local/cuda-12.0 --with-boost-home=/Users/rusi2317/bin/boost_1_86_0" Rgtsvm`
 
 > NOTE: The above line is run in the terminal (NOT in R), in the folder where `Rgtsvm` was cloned.
 >
-> NOTE: When configured correctly, you should get the * DONE (Rgtsvm) message (shown in the screenshot below).
+> NOTE: When configured correctly, you should get the `* DONE (Rgtsvm)` message (shown in the screenshot below).
 
+![imgG](images/image14.png)
 
 4. Install bedops based on their instructions (I installed v2.4.39 when I made the initial configuration. The latest release is v2.4.41, and it can be found in part (ii) below). https://bedops.readthedocs.io/en/latest/content/installation.html#linux
 
@@ -161,12 +176,16 @@ https://github.com/bedops/bedops/releases
 
 5. Testing the installation
 
-a. Load dREG in R and check what libraries are also loaded
+a. Load `dREG` in R and check what libraries are also loaded
 
-Check the session information by running the following command in R
+![imgH](images/image9.png)
+
+b. Check the session information by running the following command in R
 
 `sessionInfo()`
 
-b. Example run on the GPU cluster
+![imgI](images/image7.png)
+
+c. Example run on the GPU cluster
 
 Unfortunately, there is an R 4> bug that has not been fixed: https://github.com/Danko-Lab/dREG/issues/15
