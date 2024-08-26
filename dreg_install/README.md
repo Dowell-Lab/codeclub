@@ -4,7 +4,16 @@ Authors: Rutendo F. Sigauke (Add your name if you edit)
 
 dREG GitHub Repository: https://github.com/Danko-Lab/dREG
 
+## First, check the dREG webserver
+
+This is the fastest way to call peaks with dREG. You will need to create an account on the website, and process your nascent RNA samples to generate _bigWig_ files to upload to the webserver.
+
+dREG webserver documentation: https://dreg.dnasequence.org/pages/doc
+
+If the webserver is down, or you want to proceed with the installation, continue to the following sections.
+
 ## Dependencies
+
 Check each of the tools for installation instructions. For examples, refer to the “Detailed notes from Rutendo’s installations” section. 
 
 - bedops (http://bedops.readthedocs.org/en/latest/index.html)
@@ -85,13 +94,13 @@ b. Move into the dREG folder that has been just cloned, and run the following co
 
 `make R_dependencies`
 
-NOTE: I got the following warning “make: warning:  Clock skew detected.  Your build may be incomplete.” However, I was able to load the library in R.
+> NOTE: I got the following warning “make: warning:  Clock skew detected.  Your build may be incomplete.” However, I was able to load the library in R.
 
 c. Now, install dREG by running
 
 `make dreg`
  
-NOTE: The following package rphast did not install, so manually installing it.
+> NOTE: The following package rphast did not install, so manually installing it.
 
 d. Installing rphast using devtools following instructions from their GitHub page. https://github.com/CshlSiepelLab/RPHAST
 
@@ -140,7 +149,10 @@ f. Configure CUDA and Boost.
 
 `R CMD INSTALL --configure-args="--with-cuda-arch=sm_80 --with-cuda-home=/usr/local/cuda-12.0 --with-boost-home=/Users/rusi2317/bin/boost_1_86_0" Rgtsvm`
 
-NOTE: When configured correctly, you should get the * DONE (Rgtsvm) message (shown in the screenshot below).
+> NOTE: The above line is run in the terminal (NOT in R), in the folder where `Rgtsvm` was cloned.
+>
+> NOTE: When configured correctly, you should get the * DONE (Rgtsvm) message (shown in the screenshot below).
+
 
 4. Install bedops based on their instructions (I installed v2.4.39 when I made the initial configuration. The latest release is v2.4.41, and it can be found in part (ii) below). https://bedops.readthedocs.io/en/latest/content/installation.html#linux
 
