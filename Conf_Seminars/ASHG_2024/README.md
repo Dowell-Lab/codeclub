@@ -52,7 +52,7 @@
 ## A. Random
 * Looking at different ancestries is great to clarify LD better if replicated
 * RNA editing QTLs (edQTLs) – but identified if impacts expression somehow usually with GTEx
-## Dealing with the nightmares of non-coding genome terminology
+## B. Dealing with the nightmares of non-coding genome terminology
 * Functional categorization of gene regulatory variants that cause Mendelian conditions ([Paper](https://pubmed.ncbi.nlm.nih.gov/38436667/) headed by Andrew Stergachis, MD, PhD Associate Prof of Medicine and Genome Sciences (University of Washington))
   * Loss-of-expression (of gene) vs Modular-loss-of-expression(based on cell state, developmental or enviornmental stage)
   * Ectopic gain of expression 
@@ -63,7 +63,7 @@
 * How do we name genomic rearrangements (https://isen.karger.com/)
 * How do we name CREs?
   * RefSeq is currently trying with LOC functional elements ([Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8744684/))
-## B. Clinical interpretation of variants
+## C. Clinical interpretation of variants
 * Recommendations for clinical interpretation of variants found in non-coding regions of the genome (Paper)
 * ClinVar trying to represent functional data of cREs with a new [mock up](http://github.com/ncbi/clinvar/) – looking for feedback at clinvar@ncbi.nlm.nih.gov
 
